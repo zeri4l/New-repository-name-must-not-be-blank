@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 전체 선택자
+         html의 모든 요소를 선택함, 단 전체 선택자는 우선 순위가 가장 낮습니다.
+        
+         1. 전체 선택자를 통해 텍스트의 샏상을 빨간색으로 지정
+         2. 그 다음에 p태그들에게 텍스트를 파랑으로 지정
+
+         => p태그의 텍스트 색상은? -- 파란색
+         만약 순서가 반대로 되어도 파란색
+
+         순서와 상관없이 우선 순위가 높은게 낮은 것을 덮어 씌운다
+
+         * {
+            css문법
+         }
+        
+        -->
+        <style>
+            * {
+                font-size: 32px;
+                background-color: yellow
+                color(coral);
+            }
+
+              /* 이게 주석, 전체 선택자에는 body와 html요소도 포함 */
+
+            div {
+                background-color: aqua;
+            }
+        </style>
+</head>
+<body>
+    <div>안녕하세요</div>
+    <p>반갑습니다</p>
+    
+</body>
+</html>

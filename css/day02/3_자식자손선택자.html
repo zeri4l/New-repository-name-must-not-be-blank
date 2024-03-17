@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--
+        CSS 선택자에 있어서 DOM(요소)의 가족 관계
+
+        자식 선택자 ( > )바로 일촌
+             부모 선택자 > 자식 선택자 {
+                ...css문법
+             }
+             ex) 
+                 p > .menu { .menu 중에서 p를 찾아냄!!! p중에거 .menu를 찾는 것보다 효율적
+                    ...
+                 }
+
+
+        자손 선택자 (' ')후손
+             부모 선택자 자손 선택자 {
+                ...
+             }
+
+
+
+
+    -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <ul>
+      <a href="#">네이버</a>
+      <li>
+        <a href="#">다음</a>
+      </li>
+      <li>
+        <p>
+          <a href="#">구글</a>
+        </p>
+      </li>
+    </ul>
+  </body>
+</html>

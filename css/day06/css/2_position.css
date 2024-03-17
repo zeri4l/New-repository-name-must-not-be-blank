@@ -1,0 +1,80 @@
+:root {
+  --brand-red: #ff6868;
+  --brand-yellow: rgb(255, 255, 121);
+  --brand-green-lighter: rgb(75, 233, 75);
+  --gray-100: #eee;
+  --gray-200: #ddd;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  /* block 요소라 할지라도
+  position: fixed 시 뷰포트 기준 전환
+  width를 지정해야지만 화면을 끝까지 차지 */
+  height: 60px;
+  background-color: var(--brand-red);
+  z-index: 1000;
+  /* 
+  z-index의 범위는 새로운 요소의 추가 가능성을 고려하여 보통 100이나 1000단위로 올린다
+  겹침 요소의 우선순위를 결정하는 값
+   */
+}
+
+section {
+  position: relative;
+  padding-top: 60px;
+  height: 50vh;
+  background-color: var(--brand-yellow);
+}
+
+section > div {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: var(--brand-green-lighter);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section > div:first-of-type {
+  top: 60px;
+  left: 0;
+}
+
+section > div:nth-of-type(2) {
+  bottom: 10%;
+  right: 15%;
+}
+
+section > div:nth-of-type(3) {
+  top: 60px;
+  left: 0;
+  z-index: 1;
+}
+
+/* 
+1. 기준 도구가 relative --> body
+2. 절대 위치 지정이라 겹침 --> z-index로 해결
+3. top left right bottom을 통해서 기준 요소에서 어느 위치로 이동시킬 것인지 결정 
+*/
+
+main {
+  display: flex;
+  height: 300vh;
+}
+
+main > aside {
+  position: sticky;
+  top: 60px;
+  height: calc(100vh-60px);
+  width: 320px;
+  background-color: cadetblue;
+}
+/* 
+특정 기준에 따라(상단에 몇 px 남았는지에 따라)
+해당 기준을 만족하면 fixed처럼 뷰포트에 의존하여
+스크롤과 상관없이 요소가 위치 
+*/

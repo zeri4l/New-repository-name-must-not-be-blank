@@ -1,0 +1,35 @@
+ul {
+  list-style: none;
+}
+
+ul a {
+  text-decoration: none;
+
+  /*
+33, 35, 39
+*/
+}
+
+ul > a {
+  color: deeppink;
+  /*
+    33
+    */
+}
+
+ul > li > a {
+  color: cornflowerblue;
+  /* 35 */
+}
+
+ul > li > p > a {
+  color: darkviolet;
+  /*39*/
+}
+
+ul li a {
+  color: red;
+  /*35, 39지만 35가 우선순위 밀림
+자식, 자손 선택자의 길이다 길 수록 우선순위가 높다
+*/
+}

@@ -1,0 +1,57 @@
+p {
+  border: 1px solid #999;
+  /* 두께 형태 색상 
+       solid: 직선, dotted 둥근 점선, dashed 사각 점선, double 이중선 
+    */
+}
+
+#padding-1 {
+  padding: 8px;
+  /*
+    4방향
+    * padding: 8px
+
+    * padding: 8px 4px
+         (위아래,오른쪽왼쪽)
+
+    padding: 8px 6px 6px
+           (위,오른쪽왼쪽,아래)
+
+    padding: 8px 6px 8px 4px
+            (위,오른쪽,아래,왼쪽)(시계방향)
+
+    1방향
+    * padding-(top/bottom/left/right): 8px
+
+    */
+}
+
+#margin-1 {
+  margin: 8px 0;
+  /* 위아래만 여백, 좌우는 여백X */
+}
+
+#margin-2 {
+  margin: 16px 8px;
+  /* 마진세로겹침 or 마진상쇄효과
+    세로 여백의 경우 제일 여백 큰 것이 우선됨 */
+}
+
+.content-box {
+  /* 내용물만 300px */
+  width: 300px;
+  height: 300px;
+  padding: 16px;
+  border: 10px solid #000;
+  background-color: aqua;
+}
+
+.border-box {
+  /* 총 300px */
+  width: 300px;
+  height: 300px;
+  padding: 16px;
+  border: 10px solid #000;
+  background-color: hotpink;
+  box-sizing: border-box;
+}

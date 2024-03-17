@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- sign-up container start -->
+    <!-- p태그 안에 div 넣으면 안 됨 -->
+    <div id="login-container">
+        <!-- 속성명=속성값 -->
+        이메일: <input type="text" placeholder="이메일을 입력해주세요"/>
+        <!-- input : 입력은 나타내는 요소, 입력의 종류가 굉장히 포괄적
+                     보통은 form 요소와 함께 쓰이지만, 다음 주에 진행 할 예정 
+                     type에 따라 다양한 입력 요소를 구현 할 수 있음
+                     가장 많이 사용하는 것은 text이며 default value(기본 값)
+                     
+                     내용물이 필요없는 단일 태그  -->
+
+        <br /> <!-- 줄 바꿈 -->
+        비밀번호: <input type="password" />
+    <p>좋아하는 색상: <input type="color"></p>
+    <div><input type="button" value="회원가입" />
+    <button>회원가입</button>
+    </div>
+         취미 : 
+        <select>
+        
+        <option value="0">1</option>
+        <option value="1">2</option>
+        <option value="2">3</option>     
+    </select>
+        
+        <!-- hobby end -->
+        <!-- gender -->
+    
+    <div>
+        성별:
+        <input type="radio" name="gender" value="0" id="female"/> 
+        <label for="female">여성</label>
+        <!-- label은 for 속성의 값과 같은 id 값은 가진 요소를 연결할 수 있음 -->
+
+        <input type="radio" name="gender" value="1" id="male"/>
+        <label for="male">남성</label>
+
+        <input type="radio" name="gender" value="2" id="unknown"/>
+        <label for="unknown">비공개</label>
+        <!-- 라디오는 같은 그룹내에서 하나만 선택 가능 ex) name=gender -->
+
+    </div>
+    <div>
+    <!-- family -->>
+        <div>
+                    가족관계:
+                    <input type="checkbox" /> 본인
+                    <input type="checkbox" /> 부모
+                    <input type="checkbox" /> 형제
+                    <input type="checkbox" /> 자매
+                    <!-- checkbox는 다중 선택, javascript를 이용해서 갯수 제한-->
+         </div>
+    </div>
+
+
+</div>
+    <!-- sign-up container end -->
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+input::placeholder {
+  text-align: center;
+  color: red;
+}
+
+input:focus {
+  background-color: black;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+button:disabled {
+  color: lightgreen;
+}
+
+a:link {
+  color: aqua;
+}
+
+a:visited {
+  color: red;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  height: 300vh;
+}
+
+ul li:first-of-type {
+  color: blue;
+}
+
+ul li:first-of-type::after {
+  content: "|";
+  margin: 8px;
+}
+
+ul li:nth-of-type(2) {
+  color: violet;
+}

@@ -1,0 +1,149 @@
+
+ git
+      코드 버전 관리 시스템
+      => 코드의 히스토리를 관리(보관)
+
+      1. 히스토리 보관 (버전 관리)
+         ----> 필요없는 코드 삭제 ---> 필요해짐 ---> 이전 코드 참고 가능
+         ----> 버전 관리의 필요성 ---> 버전 업데이트 이후 롤백
+         ---->
+
+
+      2.  팀원 간의 코드 공유
+          ---> 모든 사람 (오픈 소스)  ---- 개발 커뮤니티
+
+      3. 이슈 트래킹
+      4. 리뷰를 통한 개발 문화와 엣지 케이스 발견
+
+
+      ----------------------------------------------
+      github
+
+      git으로 관리된 코드를 웹 사이트에 공유하여 보다 편리하게
+      코드를 관리하고 리뷰할 수 있는 사이트
+
+
+      -----------------------------------------
+      
+      github-flow
+
+         1. 내가 코드를 올리고 싶은 패키지를 선택
+        
+         2. 아무것도 저장이 되어있지 않을 때는 저장 공간 생성 (로컬 저장소)
+            git init
+
+         3. 선택한 패키지에서 내가 저장하고 싶은 파일을 선택 ---> 준비(스테이징)
+             git add 파일명 (특정 파일)
+             git add . (패키지 내 같은 경로에 있는 모든 파일)
+
+         4. 로컬 저장소에 준비된 파일을 저장 (커밋)
+             git commit -m "커밋 메시지(헤더)" -m "커밋 메시지(본문)" -m "커밋 메시지(각주)"
+
+         5. 커밋 내역을 확인할 수 있음
+            git log
+
+         6. 원격 저장소 생성 -- 만약에 생성 되어있다면 생략
+
+         7. 원격 저장소와 로컬 저장소를 연결
+            git remote add 원격저장소명(origin) 원격저장소-주소
+
+         8. 컨벤션에 대한 합의 -- 이니셜라이즈 (기초셋팅을 git-hub에 올릴 준비)
+
+         9. 로컬 저장소의 히스토리를 원격 저장소에 밀어넣기를 할 것
+            git push 원격저장소명(origin) 브랜치명(main)
+
+            **주의사항
+              원격 저장소의 코드를 다운받아서 내 코드와 합쳐야한다.
+              git pull origin main 
+
+
+         10. 분기 - branch
+             나뭇가지
+
+               내가 분기를 생성할 브랜치로 이동 (dev, main)
+               -git checkout 브랜치명
+
+               브랜치를 생성
+               -git branch 브랜치명
+
+               브랜치를 생성할 때는 가장 최신의 코드에서 생성하는게 좋음.
+               -git pull ...
+
+               브랜치를 생성하며 이동
+               -git checkout -b 브랜치명
+
+               브랜치 목록을 확인하는 명령어
+               -git branch
+
+               병합이 된 후에는 보관해야 할 이유가 없다면 브랜치
+               -git branch -D 브랜치명 
+
+
+------------------------------------------------------------------------------
+
+ 1. 최초 커밋 -- 이니셜 템플릿
+     git init - 로컬 저장소 생성
+     git add .
+     git commit -m '커밋메세지'
+     git remote add origin 레포지토리-주소
+     * README.md가 있으면 history가 달라서 에러가 발생
+     * git pull origin main --rebase
+     * 동기화
+     git checkout main
+     git push origin main
+
+ 2. 팀원 참여
+     git clone 레포지토리-주소
+     ---------
+     git init - git remote
+     git checkout main
+     git pull origin main
+
+ 3. 협업 관리
+     git checkout dev(시작점)
+     git pull origin dev(동기화)
+     git checkout -b feat/login
+
+     ...개발
+
+     git add . 
+     git commit -m '커밋메세지'
+
+   github O
+     git push origin feat/login
+     깃허브 홈페이지에 PR(pull request) 생성
+     승인이 있어야만 코드 병합 가능(리뷰)
+     병합을 해야합니다. -> 버튼을 누르면 병합이 가능
+     충돌 상황이 발생할 경우 버튼이 비활성화됨.
+
+     git checkout dev 
+     git pull origin dev (dev 최신화) -- 다른 사람 코드가 병합
+     git checkout feat/login
+     git merge dev
+
+     vscode 내에서 병합이 되었음을 알려주고 병합이 완료되면
+     버튼이 다시 활성화 --> PR로 이동해서 병합 버튼 눌러주면 병합이 종료 
+
+     >>>> git checkout
+
+
+
+     ------------------------------
+     개인 레포지토리
+     
+     (최초)
+     깃허브 계정 등록 
+     git config --global user.email 깃허브 이메일 주소
+     git config --global user.name 깃허브 닉네임
+     git config --list 쓰고 enter 연타 후에 종료를 원하면 q누르기
+
+
+
+     git init
+     git remote
+
+     ---
+     (개발마다)
+     git add
+     git commit
+     git push

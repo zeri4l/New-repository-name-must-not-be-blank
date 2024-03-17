@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+        color
+
+        CSS color를 표기하는 방법은 크게 3가지
+        1. 색상 이름
+           red, green, white...
+
+        2. RGB 값
+           (0~255, 0~255, 0~255)
+
+           rgba(0~255, 0~255, 0~255, 0~1)
+                                    ---투명도
+        ex) 
+            p{
+                  color: rgb(255, 0, 0)
+            }
+
+        3. 16진수
+           (00~FF)
+           "#6자리"
+           FF=15X15
+
+           color: #ff0000
+
+           주의사항! 
+             단순한 검정색에 투명도 - rgba
+             그러나 16진수의 투명도 - 16진수 뒤에 추가로 값을 더함
+
+        
+
+
+        크기
+                px
+                    절대크기-보편적으로 많이 쓰이는 단위
+
+                    모바일이나 사용자 화면에 따라 동적으로 변화해야 하는 경우 대응이 어려움.
+
+                %
+                   상위 요소(부모) 기준 비율
+                   (30%, 부모 요소 크기의 30%인 것)
+
+                   데스크탑: 부모 요소의 크기가 500px -> 30% = 150px
+                   모바일: 부모 요소의 크기를 300px -> 30% = 90px
+                
+                rem
+                   DOM 요소의 최상위 요소인 HTMl의 폰트 사이즈의 배율
+                   1rem=x1
+                   2rem=x2
+                   0.5rem=x0.5
+
+                   ex) 
+                       html{
+                            font-size: 16px
+                            //html font-size = 16px
+                            //그러나 사용자가 임의로 변경할 수 있음
+                       }
+
+                       div {
+                            width: 2rem // 32px
+                       }
+
+                       반응형에 유연하게 대처 가능
+
+                em
+                    바로 부모 요소의 폰트 사이즈의 배율
+                    
+                    모든 요소가 최상위 요소인 html에 의존적인 rem과 달리
+                    개별적인 부모 요소에 의존하므로 보다 유연하게 대처 가능
+
+                    => rem은 html 변경되면 다 바뀜, 그러나 em은 부모 요소에 따름
+
+                vw, vh
+                (dvw, dvh, svw, svh, lvw, lvh)
+
+                V(viewport)
+                사용자가 데스크탑 => 데스크탑에 맞는 크기
+
+                30vh
+                100vh -> 스크롤없이 화면에 가득 채워짐
+
+                100vw -> 가로로 가득 채우는 것
+                        스크롤 크기를 계산하지 않기 때문에
+                        스크롤이 없는 화면을 가득 채우기 위해 사용
+                        
+                        이미 block 요소들은 width 100%
+                        (div, p처럼 가로를 가득 채우는 요소)
+
+                dvh (dynamic)
+                ------------ 모바일 화면에서 주소 표시줄이나 브라우저에 따라 100vh가 달라질 수 있음
+                             
+                             주소 표시줄에 따라 단위가 변경 
+                svh (주소 표시줄 보일 때의 높이) small 
+                lvh (주소 표시줄 안 보일 때의 높이) large
+                
+                => 모바일 화면에서의 100vh가 짤림 현상이 일어났을 때 대처 방안
+                
+                
+                calc
+                    계산 기능
+                    height: calc(100vh - 80vh)
+                    *띄어쓰기 필수   
+
+
+(v0.dev)
+    -->
+    <link rel="stylesheet" href="./1_style.css" />
+  </head>
+  <body>
+    <!-- 100vh로 인한 가로 스크롤 생성! -->
+    <div style="width: 100vw; height: 300vh">
+      <p id="px">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, eaque
+        optio! Corrupti perspiciatis, facere nobis quasi sit vel ad aut
+        doloribus voluptatibus! Perspiciatis saepe possimus minima similique
+        exercitationem illum reiciendis!
+      </p>
+      <hr />
+      <p id="rem">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora
+        numquam, in ipsum odio neque sint provident assumenda recusandae dolorum
+        praesentium, libero ea quas nostrum? Aut, praesentium. Voluptatem
+        obcaecati quo dicta.
+      </p>
+      <hr />
+      <p id="em">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quod
+        similique voluptas doloremque distinctio ab doloribus dolor, nemo
+        aliquid ducimus non sunt placeat. Assumenda natus inventore aspernatur
+        aliquid tenetur magni!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, eaque
+        optio! Corrupti perspiciatis, facere nobis quasi sit vel ad aut
+        doloribus voluptatibus! Perspiciatis saepe possimus minima similique
+        exercitationem illum reiciendis!
+      </p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora
+        numquam, in ipsum odio neque sint provident assumenda recusandae dolorum
+        praesentium, libero ea quas nostrum? Aut, praesentium. Voluptatem
+        obcaecati quo dicta.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quod
+        similique voluptas doloremque distinctio ab doloribus dolor, nemo
+        aliquid ducimus non sunt placeat. Assumenda natus inventore aspernatur
+        aliquid tenetur magni!
+      </p>
+    </div>
+  </body>
+</html>

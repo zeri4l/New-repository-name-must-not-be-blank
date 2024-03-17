@@ -1,0 +1,24 @@
+html {
+  font-size: 32px;
+  color: #f0d;
+
+  /* CSS의 상속
+     폰트, 색상 관련된 속성들이 
+     하위 요소에 상속(전달)되는 것
+     */
+}
+
+#px {
+  width: 300px;
+  height: 600px;
+}
+
+#rem {
+  width: 10rem;
+  height: 20rem;
+}
+
+#em {
+  width: 10em;
+  height: 20em;
+}

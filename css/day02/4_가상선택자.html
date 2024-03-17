@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+        가상 선택자
+        해당 요소에 직접 선택자를 부여하지 않았지만, 가상의 요소를 만들거나 지정하여 CSS를 부여
+
+        가상 클래스 선택자
+        : nth-child -> Nth-of-type
+        : first-of-type(첫번째)
+        : last-of-type(마지막)
+
+        ex) 
+            ul > li:nth-of-type(3) {
+            }
+
+
+        : <-- 어떠한 상황에 따라 해당 요소가 바뀌는 것
+        :hover 마우스 올렸을 때
+        :focus 입력 폼이 완성되었을 때
+        :link 링크 요소가 연결되었을 때
+        :active 링크를 방문한 적이 있을 때
+        :disable 버튼이 비활성롸 되었을 때
+
+        :: <-- 해당 요소가 아닌 해당 요소와 간접적으로 연관된 것
+        ::placeholder
+        ::-webkit-scrollbar
+
+
+        가상 요소 선택자
+
+        선택자::before, after {
+            content: "|", 
+            color: red 
+        }
+    -->
+    <link rel="stylesheet" href="./CSS/4_style.css" />
+  </head>
+  <body>
+    <input type="text" placeholder="텍스트를 입력해주세요" />
+    <button disabled>확인</button>
+    <a href="https://www.naver.com">네이버로 이동</a>
+    <ul>
+      <li>로그인</li>
+      <li>회원가입</li>
+    </ul>
+  </body>
+</html>

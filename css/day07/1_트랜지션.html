@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      header > nav {
+        height: 60px;
+        background-color: yellow;
+      }
+      header > .hide-menu {
+        height: 300px;
+        opacity: 0;
+        background-color: orange;
+        /* transition: height 1s linear; */
+        transition: opacity 1s linear;
+      }
+      header:hover > .hide-menu {
+        /* height: 300px; */
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav></nav>
+      <div class="hide-menu"></div>
+    </header>
+  </body>
+</html>

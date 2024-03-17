@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- css link는 위에서 아래로 읽기 때문에 먼저 적용해야 하는 것이 상단 -->
+    <!-- 공유할 수있는 것 >> 이 파일에만 써야 하는 것-->
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/padding.css" />
+
+    <!-- 
+        박스 모델은 사각형
+        마진은 바깥 여백, 다른 요소와의 간격 
+        패딩은 안쪽 여백, 내용물 위치 조정
+
+        *음수 마진과 패딩은 웬만하면 주지 않는다.
+
+        테두리 (border)
+
+        요소의 크기를 계산하는 방법
+
+        content-box (default value)
+           div-> width: 300
+           300 + 안쪽 여백 + 테두리 두께 -> 300이상
+
+
+        border-box (최신이라 호환 안될 수도, 디자이너의 의도에 맞추기 위함)
+           테두리를 기준으로 하기 때문에 여백과 테두리를 포함한 크기
+           div -> width: 300
+    -->
+  </head>
+  <body>
+    <p id="padding-1">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione,
+      cupiditate ullam. Molestiae necessitatibus blanditiis consectetur, ducimus
+      porro, quos, aliquid corporis reprehenderit sint error quidem quae hic.
+      Quidem molestias earum amet?
+    </p>
+    <p id="margin-1">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum iure eaque
+      in pariatur itaque officia! Assumenda saepe incidunt facere, nihil
+      inventore obcaecati deleniti, corrupti possimus consequuntur ipsam, dolor
+      delectus quaerat?
+    </p>
+    <p id="margin-2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere illo
+      maxime, nobis illum tempore laudantium eveniet tenetur blanditiis
+      consectetur nam eius obcaecati, eos, exercitationem asperiores quaerat
+      expedita culpa voluptates odit.
+    </p>
+    <hr />
+
+    <h2>box sizing</h2>
+
+    <div class="content-box"></div>
+    <div class="border-box"></div>
+  </body>
+</html>

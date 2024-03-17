@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @font-face {
+        font-family: Noto;
+        src: url(./font/NotoSansKR-VariableFont_wght.ttf);
+      }
+      /* 
+      확장자명
+         ttf (IE9버전부터 지원, 압축없어서 용량이 큼)
+         eot (IE만 지원하는 폰트)
+         otf ( 운영체제에 직접 다운로드 폴더, 용량이 큼)
+         woff (가장 용량이 작고 빠름, 그러나 옛 버전 지원 X ) 
+
+         => 폰트 적용 불가 이슈가 있다면 확장자를 고려할 필요가 있다.
+     */
+
+      body {
+        font-family: Noto;
+      }
+
+      /* p요소 중에서 class가 align인 요소 선택 */
+      p.align {
+        text-align: center;
+      }
+      p.font {
+        font-size: 32px;
+        font-weight: 700; /* 700=bold */
+        font-family: "Noto Sans KR", sans-serif;
+        /*
+               폰트 바꾸는 법
+               cdn: <link/>로 외부 파일 연결 
+               (용량 작고 속도도 빠름 그러나 인터넷 속도에 영향을 받음)
+               1. cdn은 빠른 속도의 페이지 로딩이 가능
+               2. 중복 다운로드 방지
+               3. 브라우저에 저장. 따라서 기존 사용자는 재요청을 하지 않아도 됨.
+               
+               @font-face: download 
+               폰트 파일의 형식을 서버에서 직접 저장할 수 있기 때문에
+               어떠한 브라우저에서도 지원 가능
+               1. 폰트의 종류가 많을 때
+               2. 회사의 폰트를 사용할 때
+               3. 다양한 브라우저에서의 호환성을 지켜야 할 때
+
+               보통은 cdn 사용, 그러나 받는 파일의 용량이 크거나 인터넷이 불안정하면 느려질 수 있음.
+        
+
+               // font-display라는 속성과 연관
+               // swap 현상 (기존에 있던 폰트에서)
+
+               font-display: swap (fout)
+               기본값, 대체 폰트 -> 폰트
+
+               font-display: block (foit)
+               보여주지 않다가, 폰트 다운로드가 완료되면 -> 폰트
+
+               foit
+               웹 폰트를 불러오는 과정에서
+               폰트를 불러오는 웹 브라우저가 텍스트를 보여주지 않는 현상
+               //텍스트의 노출이 중요하지 않을 때
+
+               fout
+               반대로 웹 폰트를 불러오는 과정에서 
+               폰트를 불러오는 동안 대체 폰트를 보여주는 현상
+               //텍스트를 빨리 보여주는 것이 중요할 때
+               
+            */
+      }
+
+      #overflow {
+        width: 300px;
+        height: 100px;
+        overflow: hidden;
+        /* <->visible */
+        text-overflow: ellipsis;
+        /* <-> clip (default value) */
+        /* 반드시 overflow가 hidden이어야 하고, white-space가 nowrap이어야 함 */
+        white-space: nowrap;
+      }
+
+      /*
+      할 일은 mdn의 css태그 읽기
+      fonts
+      colors
+      background and borders
+      box model
+      display
+      images/까지는 필수
+      grid layer
+      flexible box layout(어려움)
+      positioned layout
+
+
+      */
+    </style>
+  </head>
+
+  <body>
+    <p id="align">
+      ㅇㅇLorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eaque
+      quisquam cupiditate aperiam vitae a sint, tenetur iure, assumenda totam
+      velit tempora laudantium fuga sequi quibusdam laboriosam. Doloremque,
+      assumenda unde!
+    </p>
+    <hr />
+    <p class="font">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+      rerum harum saepe nisi amet accusamus. Perspiciatis odio nemo laudantium
+      consectetur aut necessitatibus fugiat, ducimus sunt, dolore iste veritatis
+      illum asperiores.
+    </p>
+    <hr />
+    <!-- p와 div는 처음부터 끝까지 가로 길이를 차지
+        높이는? p태그를 넘는 텍스트가 있을 수 없음
+        
+        근데 만약에 ㅔ태그에 크기를 준다면?
+        글자가 p태그를 넘어서 표기됨(다른 요소에 침범)
+        
+    -->
+    <p id="overflow">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, aperiam
+      minus doloremque mollitia quidem illum. Tempore mollitia dolores id
+      cupiditate, eius explicabo, quam dicta adipisci non consequatur neque
+      fugiat voluptas?
+    </p>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        align-items: center;
+      }
+
+      header {
+        height: 60px;
+        background-color: rgb(81, 10, 203);
+        color: wheat;
+        display: flex;
+        justify-content: space-between;
+        /* justify-content: space-evenly; */
+        /* 간격을 맞춤 */
+        /* justify-content: space-around; */
+        /* 좌우동일간격 */
+        align-items: center;
+        padding: 0 32px;
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+        column-gap: 8px;
+      }
+
+      main > div {
+        display: flex;
+        column-gap: 16px;
+        align-items: center;
+      }
+
+      main {
+        height: calc(100vh - 60px - 180px);
+        padding: 0 32px;
+        display: flex;
+        justify-content: center;
+      }
+
+      footer {
+        height: 180px;
+        background-color: aquamarine;
+      }
+
+      main > div > section {
+        width: 120;
+        align-items: center;
+        display: flex;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      main > div > form > .common-form-input {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0;
+      }
+      main > div > form > button {
+        width: 100%;
+      }
+      main > div > form {
+        width: 260px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="login-header">
+      <section>LOGO</section>
+      <ul>
+        <li>로그인</li>
+        <li>|</li>
+        <li>회원가입</li>
+      </ul>
+    </header>
+    <main>
+      <div>
+        <section>LOGO</section>
+        <form action="">
+          <p class="common-form-input">
+            <label for="id">ID</label>
+            <input type="text" placeholder="이메일을 입력해주세요" />
+          </p>
+          <p class="common-form-input">
+            <label for="password">PWD</label>
+            <input type="password" placeholder="비밀번호를 입력해주세요" />
+          </p>
+          <button>로그인</button>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form 
+        입력 폼에 사용자가 입력한 데이터를 다른 서버에서 전송하기 위해 사용함
+        <button>을 클릭 시 처리하는 곳으로 보내기 위란 action이 실행 - submit
+        
+        action은 현재 잘 사용하지 않음. 굳이 form을 사용하지 않아도 됨. 근데 쓰면 편함. 
+        formdata 전송을 할 때도 많이 사용 -->
+
+          
+      <!-- 
+        method
+
+        백엔드에게 데이터를 어떻게 전달해줄 것이냐 그 방식
+        프론트엔드 서버 ---- 주소 (www.naver.com)
+        백엔드 서버 ---- 주소 (www.???.com)
+
+        어떠한 데이터를 백엔드 주소에 전달해야한다.
+
+        1. 주소에 전달 --- GET (조회)
+           ex) 특정 닉네임이 작성한 글의 대한 정보를 요청
+               www.???.com/posts?nickname=특정닉  (주소에 데이터를 실을 수 있음)
+               본문을 보낼 수 없음
+        
+        2. 본문을 통해 전달 --- POST (생성 갱신 삭제)
+           ( https://www.naver.com, data)
+
+
+      -->
+    
+    
+    <form action="#" method="get" > 
+        <p>
+            <label>이메일</label>
+            <input type="email" placeholder="이메일을 입력해주세요" name="user-name">
+            <button type="button">중복검사</button>
+            <!-- 제출을 원치 않으면 타입을 버튼으로 변경-->
+        </p>
+        <p>
+            <label>비밀번호</label>
+            <input type="password" placeholder="비밀번호를 입력해주세요" name="user-password">
+        </p>
+        <button type="submit">로그인</button>
+
+        <!-- button의 기본 타입은 submit이기 때문에 어떤 버튼이든 누르면 제출 -->
+
+
+
+    </form>   
+</body>
+</html>
