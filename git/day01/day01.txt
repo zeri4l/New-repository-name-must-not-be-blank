@@ -138,7 +138,7 @@
      git config --list 쓰고 enter 연타 후에 종료를 원하면 q누르기
 
 
-
+git push 
      git init
      git remote
 

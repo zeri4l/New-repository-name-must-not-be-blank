@@ -1,0 +1,80 @@
+
+
+ git 설치
+ github 회원가입
+ github 저장소 생성
+ 내컴퓨터에 github email, name을 등록
+ (git config --global user.email "")
+
+ --------------
+
+ 최초 커밋
+ 로컬저장소와 원격저장소를 분리해서 생각
+ (내컴퓨터)   (github) 
+
+ 디렉토리 선택 -- 상위 폴더에 .git이 생김
+              -- 하위 폴더에 .git이 생김
+
+ cd 폴더명 => 하위 폴더
+ 로컬 저장소 생성 -> git init (.git)
+ 저장하고 싶은 파일을 선택 => git add 파일명
+                         => git add .
+
+ 로컬저장소에 히스토리를 저장 => git commit -m 메세지
+ 로컬저장소와 원격저장소를 연결 -> git remote add [별명] [주소]
+
+ 원격저장소에 로컬저장소에 저장된 코드를 공유 => git push [별명] [브랜치명]
+
+ *주의사항
+ 브랜치, 관련 없는 히스토리 내역
+
+ 브랜치는 언제 생성하는가?
+ 분기가 필요할 때 => 버그가 발생해서 뒤로 돌아가야 할 때
+
+
+ 브랜치 생성 git branch 브랜치명
+ 브랜치 이동 git checkout 브랜치명
+ 생성과 이동 git checkout -b 브랜치명
+
+ 내가 push pull 받아야할 일이 생김
+ 1. vscode 우측 하단의 분기명
+ 2. git branch --> 현재 활성화된 브랜치에 하이라이트
+ 
+ -------------------------------
+
+ 관련없는 히스토리
+
+ push --> 푸쉬 하기전 pull -> git pull 별명 브랜치명 -> 관련없는 커밋이야
+
+ git pull 별명 브랜치명 --rebase (a,b를 내역없이 합치겠다)
+ git pull 별명 브랜치명 --allow-unrelated-histories
+
+ --------------------------------
+
+ git flow
+
+ main, dev (default branch)
+ --> dev -> branch 생성 (style/login) -> 개발
+ -> github style/login branch 코드 공유 -> github pull-request를 통해 dev에 merge 요청
+ -> code review -> 수정 -> 재요청/X -> approve(승인) -> merge(dev - feat/login)
+
+CODE REVIEW
+ 1. CTO 총괄 리뷰 
+ 2. 팀원 리뷰
+ 3. 코드 리뷰 마니또
+ 4. 리뷰하지 않는 것
+
+code conflict
+     style/login - dev(feat/..., style/...)
+     수정을 했으면 수정한 내용만 코드를 바꿔줍니다. 여러분이 생성한 브랜치와 비교
+                                                           (dev)
+
+     dev 브랜치에 다른 개발자들의 코드가 섞여있는 상태, 다시 한번 비교
+     충돌한 내용이 없다면 merge가 가능하지만 충돌된 내용이 있다면 해결 후 merge
+
+
+기준 브랜치 -> 브랜치 생성 -> 개발 -> 합병 요청 ->
+리뷰 -> 수정 -> 합병 -> 충돌 해경 -> 합병 
+ 
+
+--------------------------------------
